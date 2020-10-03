@@ -45,10 +45,8 @@ read choice
 if (( ($choice == 0) || ($choice == 1) || ($choice == 2) || ($choice == 3) ||($choice == 4) ||($choice == 5) ||($choice == 6) || ($choice == 7) || ($choice == 8) || ($choice == 9) ||($choice == 10) ||($choice == 11) )) ; then
     
   analysisName=${analysisCollection[${choice}]}
-  echo "Now, choose the location of the ${analysisName} output!"
-  echo "If the location corresponds to ${outputpath[${choice}]}: type 0"
-  echo 'If you have a custom location path: type 1'
-  read option
+  echo "Will use ${outputpath[${choice}]} as the location of the ${analysisName} output!"
+  option=0
 
   if (($option == 0)); then
     analysisPath=${outputpath[${choice}]}
@@ -59,20 +57,6 @@ if (( ($choice == 0) || ($choice == 1) || ($choice == 2) || ($choice == 3) ||($c
     	Plotting *m=new Plotting();
 	m->SetLumi(10064);
 	m->SetOption("$analysisName");
-    	m->SetInputLocation("$analysisPath")
-    	m->run()
-    	.q
-EOF
-
-  elif (($option == 1)); then
-    echo "Please enter your analysis output path (and click <ENTER>):"
-    read analysisPath
-
-    root -l -b << EOF
-    	.L Plotting.cxx+
-    	Plotting *m=new Plotting();
-	m->SetLumi(10064);
-    	m->SetOption("$analysisName");
     	m->SetInputLocation("$analysisPath")
     	m->run()
     	.q

@@ -9,10 +9,10 @@ void main_ZBosonAnalysis(int proof = 0, int option= 0)
 {
   // path to your local directory *or* URL, please change the default one!
   /* Local path example */
-  TString path = "/eos/project/a/atlas-outreach/projects/open-data/OpenDataTuples/renamedLargeRJets/2lep/";
+  //TString path = "/eos/project/a/atlas-outreach/projects/open-data/OpenDataTuples/renamedLargeRJets/2lep/";
 
   /* The URL to the ATLAS Open Data website repository */
-  TString path = "http://www.universidad.ch/ATLAS/outreach/open-data-2020/2lep/";
+  TString path = "https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/2lep/";
 
   //***************************************************************************************************//
   // adding chains of all MC and data samples
